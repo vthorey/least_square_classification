@@ -117,8 +117,12 @@ def plot_2D_K_classes(points):
 
 def generate_demo_data(n):
     """ Generate a demo data set with 3 classes and n points per classes. """
-    mus = [(1, 2), (0, 0), (3, 3)]
-    sigmas = [(0.5, 0.42), (0.1, 0.15), (0.6, 0.5)]
+    mus = [(np.random.randint(-3, 3), np.random.randint(-3, 3)),
+           (np.random.randint(-3, 3), np.random.randint(-3, 3)),
+           (np.random.randint(-3, 3), np.random.randint(-3, 3))]
+    sigmas = [(np.random.random(), np.random.random()),
+              (np.random.random(), np.random.random()),
+              (np.random.random(), np.random.random())]
     return convert_list_point_to_df(generate_K_gaussians(n, mus, sigmas))
 
 
